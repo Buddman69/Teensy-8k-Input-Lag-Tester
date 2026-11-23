@@ -11,8 +11,12 @@ times how long each press takes to reach a game.
 - Measures from the moment the line changes to the moment a game would see it, matched to the PC's
   clock to within a few microseconds, and splits each press into the controller's part and
   Windows' part.
+- Edge tracker: finds each input's best case and where its report cut-off sits, and follows it
+  for the whole run.
 - Also in the app: USB port check, PC power settings, USB polling trace and monitor, report
   content and ping.
+- The app keeps itself and the Teensy up to date: it offers new versions of the app, and flashes
+  the Teensy with the firmware it carries.
 
 ## Download
 
@@ -26,9 +30,23 @@ The app is a beta for Windows 10 and 11, 64-bit. It is not code-signed yet, so W
 
 ## Load the firmware onto the Teensy
 
-1. Install PJRC's [Teensy Loader](https://www.pjrc.com/teensy/loader.html).
-2. Open the `.hex` file in it. The installer puts it in the Start menu under *Teensy firmware*.
-3. Press the button on the Teensy. It programs itself and restarts as **THIRST8kINPUTTESTER**.
+From the app (0.2.0 and later), in **Input latency**, under *Teensy firmware*:
+
+- **A new Teensy 4.1, or one running something else:** click **Flash a new Teensy**, then press
+  the button on the Teensy. The app writes the firmware, restarts the Teensy and checks it runs
+  exactly what was sent.
+- **A Teensy already running THIRST8kINPUTTESTER:** the app says when it carries a newer version;
+  click **Update**. From 1.1.0 on, no button press is needed. (1.0.0 needs the button once.)
+
+Or with PJRC's [Teensy Loader](https://www.pjrc.com/teensy/loader.html): open the `.hex` file (the
+installer puts it in the Start menu under *Teensy firmware*) and press the button on the Teensy.
+
+## Updates
+
+The app checks this page's latest release when it starts. When there is a newer one, the button
+at the top right says **Update to x.y.z**: it downloads the installer, checks it against the
+release's SHA-256 checksum, installs it and reopens the app. (0.1.0 has no updater: install 0.2.0
+once by hand.)
 
 ## Wiring
 
