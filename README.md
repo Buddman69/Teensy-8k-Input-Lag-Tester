@@ -66,7 +66,14 @@ each test.
 
 ## Licence
 
-The app and firmware are provided as binaries, free to use. They are not open source.
+PolyForm Strict 1.0.0 - see [LICENSE.md](LICENSE.md).
 
-The firmware is built with PJRC's Teensyduino core, whose licence notice is in
-[NOTICE.md](NOTICE.md) and in each release.
+Free for personal and noncommercial use. **Commercial use requires a paid annual licence** -
+contact the author through this repository.
+
+Strict permits using the app and firmware, not passing them on or making changes to them: to share
+the tester, link to the [releases page](../../releases). The measurements you make with it are
+yours to publish however you like.
+
+The app and firmware are provided as binaries. They are not open source. The firmware is built with
+PJRC's Teensyduino core, which keeps its own licence: see [NOTICE.md](NOTICE.md) and each release.
